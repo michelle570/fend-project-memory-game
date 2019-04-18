@@ -1,5 +1,37 @@
-/*Create a list that holds all of your cards */
-/*Maybe just create array of list of classes*/
+/*NOTE: Create a list that holds all of your cards */
+/*NOTE: Maybe just create array of list of classes*/
+
+
+
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var CloseSpan = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+  document.querySelector('.win-score').textContent = Score;
+  document.querySelector('.win-stars').textContent = Moves;
+}
+
+// When the user clicks on <span> (x), close the modal
+CloseSpan.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 
 /*
@@ -8,6 +40,10 @@
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+let cardArray = [
+
+]
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -24,9 +60,14 @@ function shuffle(array) {
     return array;
 }
 
+function ShuffledContainer() {
+
+}
+
 /*Open Card*/
 let OpenCard;
 let Score = 0;
+let Moves = 0;
 
 const deck = document.querySelector('#deck');
 
@@ -36,17 +77,22 @@ deck.addEventListener('click', function(event) {
   let card = event.target;
 
   /*If not matched card then Open Card*/
-  if (!(card.classList.contains('match'))) {
+  if (!(card.classList.contains('match')) && !(card.classList.contains('open')) && !(deck.classList.contains('disable'))) {
     card.classList.toggle('open');
-    /*NOTE: Also verify it is not the Same Current Card use ===?*/
+    /*Add to Moves*/
+    Moves ++;
+    document.querySelector('.moves').textContent = Moves;
+
+    /**/
+    console.log();
 
     /*Verifies agains Opened Card*/
     if (!OpenCard) {
-      /*Set Open Card*/
+      /*Set Open Card on First Click*/
       OpenCard = card;
     }
     else {
-      /*Compare Current Card with Just Opened*/
+      /*Compare Current Card with Just Opened on Second Click*/
       if (card.innerHTML == OpenCard.innerHTML) {
         /*same*/
         console.log("same");
@@ -55,37 +101,53 @@ deck.addEventListener('click', function(event) {
 
         /*Add into Score*/
         Score ++;
-        document.querySelector('.score').textContent = Score + "/16";
+        document.querySelector('.score').textContent = Score + "/8";
+        OpenCard = "";
+        if (Score == 8) {
+          console.log("WON GAME!");
+          GameWon();
+        }
+
       }
       else {
         /*Not Same*/
         console.log("not same");
 
-        /*NOTE: Only one classList allowed?*/
+        /*Flip Back Cards*/
         card.classList.add('unmatch');
         OpenCard.classList.add('unmatch');
-        /*NOTE: Add a wait and then close???*/
-        card.classList.remove('open');
-        OpenCard.classList.remove('open');
+
+        /*Disable board temporarily*/
+        deck.classList.add('disable');
+
+        setTimeout (function() {
+          console.log(card);
+          console.log(OpenCard);
+          card.classList.remove('open', 'unmatch');
+          OpenCard.classList.remove('open', 'unmatch');
+          /*clear OpenCard*/
+          OpenCard = "";
+
+          /*Enable deck again*/
+          deck.classList.remove('disable');
+        }, 1100);
 
       }
-      /*clear OpenCard*/
-      OpenCard = "";
-      /*NOTE:Check if Won*/
     }
   }
 
-
-
 });
 
-/*
- * set up the event listener for a card. If a card is clicked:
-    - display the card's symbol (put this functionality in another function that you call from this one)
-    - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
-    - if the list already has another card, check to see if the two cards match
-      + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
-      + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
-      + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
-      + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
+function GameWon() {
+  modal.style.display = "block";
+  /*Display Modal Info*/
+  document.querySelector('.win-score').textContent = Score;
+  document.querySelector('.win-stars').textContent = Moves;
+
+  /*NOTE: ADD reset function*/
+}
+
+function setStars() {
+  /*Set Stars*/
+}
+/*SET ALL IN FUNCTIONS*/
