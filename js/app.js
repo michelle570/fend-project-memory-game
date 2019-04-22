@@ -83,7 +83,7 @@ deck.addEventListener('click', function(event) {
 
         setTimeout (function() {
           card.classList.remove('open', 'unmatch');
-          OpenCard.classList.remove('open', 'unmatch');
+          OpenCard.classList.remove('open','unmatch');
           /*clear OpenCard*/
           OpenCard = "";
 

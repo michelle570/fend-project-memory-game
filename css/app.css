@@ -56,6 +56,10 @@ h1 {
     margin: 0 0 3em;
 }
 
+#deck i {
+  transform: rotateY(180deg);
+}
+
 #deck .card {
     height: 125px;
     width: 125px;
@@ -68,7 +72,7 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-    /*transition: all 0s linear 0.25s, transform 0.5s linear;*/
+    transition: all 0s linear 0.25s, transform 0.5s linear;
 }
 
 #deck .card.open {
@@ -88,7 +92,6 @@ h1 {
 #deck .card.unmatch {
     cursor: default;
     background: #D15500;
-    font-size: 33px;
 }
 
 /*
