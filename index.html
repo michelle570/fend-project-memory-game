@@ -4,11 +4,8 @@
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
-    <!--<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">-->
 
     <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-
-
 
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
@@ -38,84 +35,25 @@
         </section>
 
         <ul id="deck">
-            <li class="card">
-                <i class="fas fa-gem"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-paper-plane"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-cube"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-gem"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-paper-plane"></i>
-            </li>
-            <li class="card">
-                <i class="fas fa-cube"></i>
-            </li>
         </ul>
     </div>
 
 <!--MODAL START -->
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
-
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <i class="fas fa-check-circle"></i>
-        <h1>Congratulations!</h1>
-        <p>You won with <span class="win-score">0</span> Moves. And <span class="win-stars">0</span> stars!</p>
-        <button id="PlayAgain">Play Again!</button>
+        <div class="GameResults">
+          <i class="fas fa-check-circle"></i>
+          <h1>Congratulations!</h1>
+          <p>You won with <span class="win-moves">0</span> Moves. And <span class="win-stars">      </span> stars!</p>
+          <button id="PlayAgain">Play Again!</button>
+        </div>
       </div>
-
     </div>
 <!--MODAL END -->
-
-<i class="fa fa-key"></i>
-<i class="fa fa-leaf"></i>
-<i class="fa fa-paw"></i>
-<i class="fa fa-rocket"></i>
-<i class="fa fa-umbrella"></i>
-<i class="fa fa-paper-plane"></i>
-<i class="fa fa-bolt"></i>
-<i class="fa fa-book"></i>
 
     <script src="js/app.js"></script>
 </body>
