@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //RESET Click Function
 resetBtn.addEventListener('click', function(event) {
+  clearTimeout(t);
   ShuffledContainer();
 });
 
@@ -44,6 +45,11 @@ deck.addEventListener('click', function(event) {
     Moves ++;
     document.querySelector('.moves').textContent = Moves;
     setStars();
+
+    /*Verifies if first click to start timer*/
+    if (Moves == 1) {
+      timer();
+    }
 
     /*Verifies if there is an open card*/
     if (!OpenCard) {
@@ -105,6 +111,8 @@ function GameWon() {
   modal.style.display = "block";
   document.querySelector('.win-moves').textContent = Moves;
   document.querySelector('.win-stars').innerHTML = document.querySelector('.stars').innerHTML;
+  document.querySelector('.win-time').innerHTML = document.getElementById('timer').innerHTML;
+  clearTimeout(t);
 }
 
 function setStars() {
@@ -162,6 +170,8 @@ function Reset() {
   document.querySelector('.stars').innerHTML = "<li><i class='fas fa-star'></i></li><li><i class='fas fa-star'></i></li><li><i class='fas fa-star'></i></i>";
   document.querySelector('.moves').textContent = Moves;
   document.querySelector('.score').textContent = Score + "/8";
+
+  clearTimer();
 }
 
 /*MODAL FUNCTIONS adapted from https://www.w3schools.com/howto/howto_css_modals.asp*/
@@ -184,3 +194,30 @@ window.onclick = function(event) {
   }
 }
 /*END OF MODAL FUNCTIONS*/
+/*Timer functions from https://jsfiddle.net/Daniel_Hug/pvk6p/*/
+let timertag = document.getElementById('timer');
+let seconds = 0, minutes = 0, hours = 0;
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    timertag.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+function clearTimer() {
+  timertag.textContent = "00:00:00";
+  seconds = 0; minutes = 0; hours = 0;
+}
