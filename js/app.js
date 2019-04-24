@@ -40,7 +40,6 @@ deck.addEventListener('click', function(event) {
 
     card.classList.toggle('open');
 
-
     /*Add to Moves*/
     Moves ++;
     document.querySelector('.moves').textContent = Moves;
@@ -86,7 +85,6 @@ deck.addEventListener('click', function(event) {
         /*Disable board temporarily*/
         deck.classList.add('disable');
 
-
         setTimeout (function() {
           card.classList.remove('open', 'unmatch');
           OpenCard.classList.remove('open','unmatch');
@@ -96,16 +94,13 @@ deck.addEventListener('click', function(event) {
           /*Enable deck again*/
           deck.classList.remove('disable');
         }, 1800);
-
       }
     }
   }
-
 });
 
 
 //FUNCTIONS
-
 function GameWon() {
   /*Display Modal Info*/
   modal.style.display = "block";
@@ -144,7 +139,6 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
     return array;
 }
 

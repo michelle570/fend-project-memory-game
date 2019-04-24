@@ -37,9 +37,7 @@ h1 {
     padding-bottom: 15px;
 }
 
-/*
- * Styles for the deck of cards
- */
+/* Styles for the deck of cards */
 
 #deck {
     width: 660px;
@@ -57,7 +55,7 @@ h1 {
 }
 
 #deck i {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 #deck .card {
@@ -82,7 +80,6 @@ h1 {
     transform: rotateY(180deg);
 }
 
-
 #deck .card.match {
     cursor: default;
     background: #02ccba;
@@ -94,9 +91,7 @@ h1 {
     background: #D15500;
 }
 
-/*
- * Styles for the Score Panel
- */
+/* Styles for the Score Panel*/
 
 .score-panel {
     text-align: left;
@@ -111,7 +106,8 @@ h1 {
     margin: 0 5px 0 0;
 }
 
-.score-panel .stars li , .win-stars li{
+.score-panel .stars li ,
+.win-stars li {
     list-style: none;
     display: inline-block;
 }
@@ -122,31 +118,31 @@ h1 {
 }
 
 .score-panel .info {
-  padding: 0px 10px;
+    padding: 0 10px;
 }
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  border: 1px solid #888;
-  width: 80%;
-  text-align: center;
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
 }
 
 .GameResults {
@@ -155,36 +151,36 @@ h1 {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 0px 20px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0 20px;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #PlayAgain {
-  background-color: #2e3d49;
-  border: 0px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-  font-family: 'Coda', cursive;
-  cursor: pointer;
+    background-color: #2e3d49;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Coda', cursive;
+    cursor: pointer;
 }
 
 #PlayAgain:hover {
-  background-color: #586e80;
+    background-color: #586e80;
 }
 
 .fa-check-circle {
-  font-size: 100px;
-  color:#02ccba ;
+    font-size: 100px;
+    color:#02ccba ;
 }
