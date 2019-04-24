@@ -1,20 +1,14 @@
 # Memory Game Project
+This a Memory Game created for the Front End Development Nanodegree at Udacity.
 
-## Table of Contents
+## Game
+The game consists of our childhood favorite game, the memory game. In this game the user attempts to find matches of all cards by flipping over each card.
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## How To Play
+To play the game the user must attempt to flip the matching cards one after the other. The user then flips two cards at a time.
+* If the cards match, a point is gained and they remained flipped open.
+* If the cards do not matched they are flipped over.
 
-## Instructions
+This happens until the cards are all matched and flipped over.
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+Once this happens the user has WON THE GAME and displays score, time, and stars!
