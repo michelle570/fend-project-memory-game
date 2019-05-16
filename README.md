@@ -12,3 +12,5 @@ To play the game the user must attempt to flip the matching cards one after the 
 This happens until the cards are all matched and flipped over.
 
 Once this happens the user has WON THE GAME and displays score, time, and stars!
+
+[Play the Memory Game](https://michelle570.github.io/fend-project-memory-game/)
